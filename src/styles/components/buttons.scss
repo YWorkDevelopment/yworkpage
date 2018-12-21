@@ -1,0 +1,31 @@
+@import "../variables.scss";
+
+.button {
+  appearance: none;
+  align-items: center;
+
+  display: inline-flex;
+  width: 5 * $distance-lg;
+  height: $distance-lg + $distance-sm;
+  padding: 0 $distance-sm;
+  font-size: 12px;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+  border-radius: 5px;
+  white-space: nowrap;
+  line-height: 0;
+  transition: border 0.2s, background 0.2s, color 0.2s ease-out;
+}
+
+.button-red {
+  color: $white;
+  background: $red;
+  border: 1px solid $red;
+}
+
+.button-red:hover {
+  color: $red;
+  background: $white;
+}

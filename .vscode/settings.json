@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.firebase": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/.vscode": true,
+    "**/build": true,
+    "**/CVS": true,
+    "**/node_modules": true,
+    "**/registerServiceWorker.ts": true,
+    "**/**.css": true,
+    "images.d.ts": true,
+    "tsconfig.json": true,
+    "tsconfig.prod.json": true,
+    "tsconfig.test.json": true,
+    "tslint.json": true,
+    "yarn.lock": true
+  }
+}

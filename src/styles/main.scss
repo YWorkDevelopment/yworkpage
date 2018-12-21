@@ -1,0 +1,58 @@
+@import "./variables.scss";
+
+* {
+  color: $black;
+}
+
+.buffer-xlg {
+  height: $distance-lg * 3;
+}
+
+.buffer-lg {
+  height: $distance-lg;
+}
+
+.buffer-md {
+  height: $distance-md;
+}
+
+.buffer-sm {
+  height: $distance-sm;
+}
+
+.buffer-xs {
+  height: $distance-xs;
+}
+
+.vertical-buffer {
+  width: $distance-sm;
+}
+
+.flexer {
+  margin: auto;
+  max-width: 28 * $distance-lg;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  @media only screen and (max-width: 768px) {
+    padding-right: 0 !important;
+  }
+}
+
+.paddinger {
+  padding: 0 1rem !important;
+}
+
+.col-md-8 {
+  @media only screen and (max-width: 768px) {
+    padding-right: 0 !important;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+blockquote {
+  text-align: justify;
+}
