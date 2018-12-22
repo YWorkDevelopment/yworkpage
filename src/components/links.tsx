@@ -8,11 +8,30 @@ interface NavLinkProps {
 class NavLink extends React.Component<NavLinkProps, {}> {
   public render() {
     return (
-      <Link to={this.props.to} className="nav-link">
+      <Link
+        to={this.props.to}
+        className={
+          "nav-link" + (location.pathname === this.props.to ? " active" : "")
+        }
+      >
         {this.props.children}
       </Link>
     );
   }
 }
 
-export { NavLink };
+interface ButtonLinkProps {
+  to: string;
+}
+
+class ButtonLink extends React.Component<ButtonLinkProps, {}> {
+  public render() {
+    return (
+      <Link to={this.props.to} className="no-decoration">
+        {this.props.children}
+      </Link>
+    );
+  }
+}
+
+export { NavLink, ButtonLink };

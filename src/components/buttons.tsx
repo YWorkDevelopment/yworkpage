@@ -1,15 +1,39 @@
 import * as React from "react";
 
+import { ButtonLink } from "./links";
+
 class FindWorkButton extends React.Component<{}, {}> {
   public render() {
-    return <button className="button button-red">Arbeit finden</button>;
+    return (
+      <ButtonLink to="/kontakt">
+        <button className="button button-red">Arbeit finden</button>
+      </ButtonLink>
+    );
   }
 }
 
-class MoreButton extends React.Component<{}, {}> {
+interface MoreButtonProps {
+  to: string;
+}
+
+class MoreButton extends React.Component<MoreButtonProps, {}> {
   public render() {
-    return <button className="button button-red">Mehr</button>;
+    return <LinkButton to={this.props.to}>Mehr</LinkButton>;
   }
 }
 
-export { FindWorkButton, MoreButton };
+interface LinkButtonProps {
+  to: string;
+}
+
+class LinkButton extends React.Component<LinkButtonProps, {}> {
+  public render() {
+    return (
+      <ButtonLink to={this.props.to}>
+        <button className="button button-red">{this.props.children}</button>
+      </ButtonLink>
+    );
+  }
+}
+
+export { FindWorkButton, MoreButton, LinkButton };

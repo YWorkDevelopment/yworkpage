@@ -1,1 +1,8 @@
 @import "../variables.scss";
+
+.no-decoration,
+.no-decoration:hover,
+.no-decoration:active,
+.no-decoration:focus {
+  text-decoration: none;
+}

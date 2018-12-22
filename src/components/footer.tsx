@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Instagram } from "react-feather";
+import { Instagram, Facebook } from "react-feather";
 
 class Footer extends React.Component<{}, {}> {
   public render() {
@@ -18,7 +18,15 @@ class Footer extends React.Component<{}, {}> {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Instagram size={32} /> Folge uns auf Instagram!
+            <Instagram size={28} /> Folge uns auf Instagram!
+          </a>
+
+          <a
+            href="https://www.facebook.com/ywork.switzerland"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Facebook size={28} /> Folge uns auf Facebook!
           </a>
         </div>
       </footer>

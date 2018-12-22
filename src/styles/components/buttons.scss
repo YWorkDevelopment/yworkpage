@@ -16,7 +16,12 @@
   border-radius: 5px;
   white-space: nowrap;
   line-height: 0;
+  text-decoration: none;
   transition: border 0.2s, background 0.2s, color 0.2s ease-out;
+}
+
+.button:hover {
+  text-decoration: none !important;
 }
 
 .button-red {

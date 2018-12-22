@@ -1,7 +1,10 @@
 import * as React from "react";
+import { Zap } from "react-feather";
 
 import { FindWorkButton, MoreButton } from "../components/buttons";
 import Subcontainer from "../components/subcontainer";
+
+import logo from "../images/logo.png";
 
 class Home extends React.Component<{}, {}> {
   public render() {
@@ -23,6 +26,7 @@ class Home extends React.Component<{}, {}> {
         </div>
 
         <div className="buffer-lg" />
+        <div className="buffer-lg" />
 
         <Subcontainer
           subtitle="Name"
@@ -32,8 +36,10 @@ class Home extends React.Component<{}, {}> {
           tönt das wie: „why work?“ auf Deutsch: „warum arbeiten?“ Darauf
           können wir die Antwort liefern. Es gibt nichts Besseres, als
           Gutes zu tun und dafür noch Entlohnung zu erhalten."
+          image={<img src={logo} className="full-img" />}
         />
 
+        <div className="buffer-md" />
         <div className="buffer-sm" />
 
         <Subcontainer
@@ -53,8 +59,10 @@ class Home extends React.Component<{}, {}> {
           die Vermittlungs-App einen Beitrag zum
           generationenübergreifenden Miteinander."
           align="right"
+          image={<Zap size="100%" className="shrink" />}
         />
 
+        <div className="buffer-md" />
         <div className="buffer-sm" />
 
         <Subcontainer
@@ -66,7 +74,9 @@ class Home extends React.Component<{}, {}> {
           }
           content="Wir alle sind zurzeit in der Tertia des Gymnasium Thuns und
           haben das Schwerpunktfach Wirtschaft und Recht."
-          moreButton={<MoreButton />}
+          moreButton={<MoreButton to="/team" />}
+          align="center"
+          image={<p />}
         />
       </div>
     );
