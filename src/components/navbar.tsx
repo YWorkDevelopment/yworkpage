@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { NavLink } from "./links";
+
 class NavBar extends React.Component<{}, {}> {
   public render() {
     return (
@@ -24,23 +26,23 @@ class NavBar extends React.Component<{}, {}> {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link">Home</a>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Events</a>
+                <NavLink to="/events">Events</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Team</a>
+                <NavLink to="/team">Team</NavLink>
               </li>
             </ul>
 
             <ul className="navbar-nav float-right">
               <li className="nav-item">
-                <a className="nav-link">Kontakt</a>
+                <NavLink to="/kontakt">Kontakt</NavLink>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link">Impressum</a>
+                <NavLink to="/impressum">Impressum</NavLink>
               </li>
             </ul>
           </div>

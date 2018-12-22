@@ -10,22 +10,5 @@
     .subslogan {
       font-size: 1rem; } }
 
-.sub-container {
-  padding: 1rem; }
-
-.full-width {
-  width: 100%; }
-
-.small-title {
-  color: #ff393a;
-  text-transform: uppercase; }
-
-.large-title {
-  font-size: 2.5rem;
-  font-weight: bold; }
-  @media only screen and (max-width: 768px) {
-    .large-title {
-      font-size: 1.5rem; } }
-
 .quote {
   color: #969696; }

@@ -1,0 +1,22 @@
+@import "../variables.scss";
+
+.sub-container {
+  padding: $distance-md;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.small-title {
+  color: $red;
+  text-transform: uppercase;
+}
+
+.large-title {
+  font-size: 1.25 * $distance-lg;
+  @media only screen and (max-width: 768px) {
+    font-size: 0.75 * $distance-lg;
+  }
+  font-weight: bold;
+}

@@ -6,12 +6,18 @@ import App from "./App";
 import "./styles/main.css";
 
 // Page Styles
+import "./styles/pages/about.css";
+import "./styles/pages/contact.css";
+import "./styles/pages/events.css";
 import "./styles/pages/home.css";
+import "./styles/pages/team.css";
 
 // Component Styles
 import "./styles/components/buttons.css";
 import "./styles/components/footer.css";
+import "./styles/components/links.css";
 import "./styles/components/navbar.css";
+import "./styles/components/subcontainer.css";
 
 import registerServiceWorker from "./registerServiceWorker";
 
