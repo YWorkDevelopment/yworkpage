@@ -4,7 +4,7 @@ interface Props {
   subtitle: string;
   title: string | JSX.Element;
   content: string;
-  image: JSX.Element;
+  image?: JSX.Element;
   align?: "left" | "right" | "center";
   moreButton?: JSX.Element;
 }
@@ -15,7 +15,9 @@ class Subcontainer extends React.Component<Props, {}> {
     const isCenter = this.props.align === "center";
     const isSize = window.innerWidth < 768;
 
-    const imageCol = <div className="col-md-4">{this.props.image}</div>;
+    const imageCol = (
+      <div className="col-md-4 text-center">{this.props.image}</div>
+    );
 
     const content = (
       <div className="col-md-8">

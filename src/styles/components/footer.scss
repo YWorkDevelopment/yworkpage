@@ -3,12 +3,12 @@
 .footer-container {
   background: $gray;
   padding: $distance-md;
-  padding-bottom: $distance-lg;
   border-top: 1px solid $dark-gray;
   height: fit-content;
 }
 
 .fade-text {
+  font-size: $distance-sm * 1.5;
   color: $darker-gray;
   text-transform: uppercase;
 }

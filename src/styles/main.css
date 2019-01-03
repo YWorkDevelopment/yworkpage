@@ -25,10 +25,10 @@
 
 .flexer {
   margin: auto;
-  max-width: 56rem;
   display: flex;
-  width: 100%;
-  justify-content: space-between; }
+  justify-content: space-between;
+  max-width: 56rem;
+  width: 100%; }
   @media only screen and (max-width: 768px) {
     .flexer {
       padding-right: 0 !important; } }
@@ -40,14 +40,27 @@
   .col-md-8 {
     padding-right: 0 !important; } }
 
+.social-link {
+  margin: 0 0.5rem; }
+
 .bold {
   font-weight: bold; }
 
 .shrink {
-  transform: scale(0.85, 0.85); }
+  transform: scale(0.75, 0.75); }
 
 blockquote {
   text-align: justify; }
 
 .full-img {
   width: 100%; }
+  @media only screen and (max-width: 768px) {
+    .full-img {
+      width: 75%; } }
+
+@media only screen and (max-width: 768px) {
+  .portrait {
+    padding-top: 1rem; } }
+
+.max-img {
+  max-width: 100%; }

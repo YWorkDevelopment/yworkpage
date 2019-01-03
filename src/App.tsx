@@ -12,6 +12,10 @@ import About from "./pages/about";
 import _404 from "./pages/404";
 
 class App extends React.Component<{}, {}> {
+  public componentWillMount() {
+    window.onresize = () => this.forceUpdate();
+  }
+
   public render() {
     return (
       <Router>
@@ -22,12 +26,23 @@ class App extends React.Component<{}, {}> {
 
           <div className="router-switch paddinger">
             <Switch>
-              <Route path="/" render={() => <Home />} exact={true} />
-              <Route path="/events" render={() => <Events />} />
-              <Route path="/team" render={() => <Team />} />
-              <Route path="/kontakt" render={() => <Contact />} />
-              <Route path="/impressum" render={() => <About />} />
-              <Route render={() => <_404 />} />
+              {/* Home */}
+              <Route path="/" component={Home} exact={true} />
+
+              {/* Events */}
+              <Route path="/events" component={Events} />
+
+              {/* Team */}
+              <Route path="/team" component={Team} />
+
+              {/* Contact */}
+              <Route path="/kontakt" component={Contact} />
+
+              {/* About */}
+              <Route path="/impressum" component={About} />
+
+              {/* Not Found! */}
+              <Route component={_404} />
             </Switch>
           </div>
 

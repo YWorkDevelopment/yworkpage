@@ -1,1 +1,25 @@
 @import "../variables.scss";
+
+.captcha-container,
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.retry-text {
+  color: $red;
+}
+
+.contact-input {
+  width: fit-content;
+  text-align: center;
+}
+
+.contact-input:hover {
+  border-color: $darker-gray;
+}
+
+.contact-input:focus {
+  box-shadow: none;
+  border-color: $red;
+}

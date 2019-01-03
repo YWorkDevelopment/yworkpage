@@ -1,10 +1,10 @@
 .footer-container {
   background: #fafafa;
   padding: 1rem;
-  padding-bottom: 2rem;
   border-top: 1px solid #efefef;
   height: fit-content; }
 
 .fade-text {
+  font-size: 0.75rem;
   color: #969696;
   text-transform: uppercase; }

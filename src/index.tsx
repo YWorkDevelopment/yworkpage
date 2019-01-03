@@ -17,6 +17,7 @@ import "./styles/components/buttons.css";
 import "./styles/components/footer.css";
 import "./styles/components/links.css";
 import "./styles/components/navbar.css";
+import "./styles/components/social.css";
 import "./styles/components/subcontainer.css";
 
 import registerServiceWorker from "./registerServiceWorker";

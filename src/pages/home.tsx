@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Zap } from "react-feather";
 
 import { FindWorkButton, MoreButton } from "../components/buttons";
 import Subcontainer from "../components/subcontainer";
+import { SocialLinks } from "../components/social";
 
 import logo from "../images/logo.png";
 
@@ -36,11 +36,10 @@ class Home extends React.Component<{}, {}> {
           tönt das wie: „why work?“ auf Deutsch: „warum arbeiten?“ Darauf
           können wir die Antwort liefern. Es gibt nichts Besseres, als
           Gutes zu tun und dafür noch Entlohnung zu erhalten."
-          image={<img src={logo} className="full-img" />}
+          image={<img src={logo} className="full-img" key="y-work-logo" />}
         />
 
         <div className="buffer-md" />
-        <div className="buffer-sm" />
 
         <Subcontainer
           subtitle="Idee"
@@ -59,11 +58,9 @@ class Home extends React.Component<{}, {}> {
           die Vermittlungs-App einen Beitrag zum
           generationenübergreifenden Miteinander."
           align="right"
-          image={<Zap size="100%" className="shrink" />}
         />
 
         <div className="buffer-md" />
-        <div className="buffer-sm" />
 
         <Subcontainer
           subtitle="Team"
@@ -75,8 +72,21 @@ class Home extends React.Component<{}, {}> {
           content="Wir alle sind zurzeit in der Tertia des Gymnasium Thuns und
           haben das Schwerpunktfach Wirtschaft und Recht."
           moreButton={<MoreButton to="/team" />}
-          align="center"
-          image={<p />}
+          align="left"
+        />
+
+        <Subcontainer
+          subtitle="Social"
+          title={
+            <div>
+              Wo ist <span className="y">Y</span>-Work?
+            </div>
+          }
+          content="Wir haben Social Media Kanäle auf Instagram (@ywork2018) und Facebook (ywork.switzerland), wo wir dich ständig auf dem Laufenden halten. Schau doch mal vorbei!"
+          moreButton={
+            <SocialLinks insta="ywork2018" facebook="ywork.switzerland" />
+          }
+          align="right"
         />
       </div>
     );
