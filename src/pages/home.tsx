@@ -29,20 +29,27 @@ class Home extends React.Component<{}, {}> {
         <div className="buffer-lg" />
 
         <Subcontainer
-          subtitle="Name"
+          subtitle="Der Name"
           title="Youth-Work, Why Work?"
           content="Youth-Work wird aus dem Englischen abgeleitet und steht für die
           Arbeit, die Jugendliche bei unserer Idee leisten. Ausgesprochen
           tönt das wie: „why work?“ auf Deutsch: „warum arbeiten?“ Darauf
           können wir die Antwort liefern. Es gibt nichts Besseres, als
           Gutes zu tun und dafür noch Entlohnung zu erhalten."
-          image={<img src={logo} className="full-img" key="y-work-logo" />}
+          image={
+            <img
+              src={logo}
+              className="full-img"
+              alt="ywork-logo"
+              key="y-work-logo"
+            />
+          }
         />
 
         <div className="buffer-md" />
 
         <Subcontainer
-          subtitle="Idee"
+          subtitle="Die Idee"
           title={
             <div>
               Was ist <span className="y">Y</span>-Work?
@@ -63,7 +70,7 @@ class Home extends React.Component<{}, {}> {
         <div className="buffer-md" />
 
         <Subcontainer
-          subtitle="Team"
+          subtitle="Das Team"
           title={
             <div>
               Wer ist <span className="y">Y</span>-Work?
@@ -75,8 +82,10 @@ class Home extends React.Component<{}, {}> {
           align="left"
         />
 
+        <div className="buffer-md" />
+
         <Subcontainer
-          subtitle="Social"
+          subtitle="Social Media"
           title={
             <div>
               Wo ist <span className="y">Y</span>-Work?

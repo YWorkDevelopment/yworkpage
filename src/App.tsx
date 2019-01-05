@@ -46,7 +46,9 @@ class App extends React.Component<{}, {}> {
             </Switch>
           </div>
 
-          <div className="buffer-xlg" />
+          <div className="buffer-lg" />
+          <div className="buffer-lg" />
+          {window.innerWidth > 768 ? <div className="buffer-lg" /> : null}
 
           <Footer />
         </div>

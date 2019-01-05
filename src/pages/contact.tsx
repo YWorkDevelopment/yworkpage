@@ -7,6 +7,10 @@ interface State {
   mail: string;
 }
 
+window["onHuman"] = (captcha: string) => {
+  window["captcha"] = captcha;
+};
+
 class Contact extends React.Component<{}, State> {
   state: State = {
     invalid: false,
@@ -25,11 +29,11 @@ class Contact extends React.Component<{}, State> {
     e.preventDefault();
 
     const mail = this.state.mail;
-    const captcha = document.querySelector("#g-recaptcha-response");
+    const captcha = window["captcha"];
 
     if (!this.checkEmail(mail)) return;
 
-    if (captcha === undefined || captcha === null) {
+    if (captcha === undefined || captcha === "" || captcha === null) {
       this.setState({
         invalid: true,
         message: "Bestätigen Sie, dass Sie kein Roboter sind."
@@ -37,13 +41,13 @@ class Contact extends React.Component<{}, State> {
       return;
     }
 
-    fetch(`https://ywork-backend.now.sh/api?mail=${mail}`, {
+    fetch(`https://ywork-backend.now.sh/api`, {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ captcha })
+      body: JSON.stringify({ captcha, mail })
     })
       .then(res => res.json())
       .then(data => {
@@ -106,6 +110,7 @@ class Contact extends React.Component<{}, State> {
           <div
             className="g-recaptcha"
             data-sitekey="6LeYlYYUAAAAAONnyYHDi1RhG2jsFhXCfAh6euq_"
+            data-callback="onHuman"
           />
         </div>
 

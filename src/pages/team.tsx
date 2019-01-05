@@ -24,7 +24,12 @@ class Team extends React.Component<{}, {}> {
 
           <div className="buffer-md" />
 
-          <img src={team} className="max-img" key="team-image" />
+          <img
+            src={team}
+            className="max-img"
+            alt="team-image"
+            key="team-image"
+          />
         </div>
 
         <div className="buffer-lg" />
@@ -35,10 +40,17 @@ class Team extends React.Component<{}, {}> {
           title="Jannis"
           content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
           moreButton={<SocialLinks insta="jannis.freitag" />}
-          image={<img src={jannis} className="portrait" key="jannis-image" />}
+          image={
+            <img
+              src={jannis}
+              className="portrait"
+              alt="jannis-portrait"
+              key="jannis-image"
+            />
+          }
         />
 
-        <div className="buffer-md" />
+        <div className="buffer-lg" />
 
         <Subcontainer
           subtitle="CFO"
@@ -46,40 +58,66 @@ class Team extends React.Component<{}, {}> {
           content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
           moreButton={<SocialLinks insta="__.iamale10.__" />}
           image={
-            <img src={alessandro} className="portrait" key="alessandro-image" />
+            <img
+              src={alessandro}
+              className="portrait"
+              alt="alessandro-portrait"
+              key="alessandro-image"
+            />
           }
           align="right"
         />
 
-        <div className="buffer-md" />
+        <div className="buffer-lg" />
 
         <Subcontainer
           subtitle="CTO"
           title="Andrea"
           content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
           moreButton={<SocialLinks insta="instaendu" />}
-          image={<img src={andrea} className="portrait" key="andrea-image" />}
+          image={
+            <img
+              src={andrea}
+              className="portrait"
+              alt="andrea-portrait"
+              key="andrea-image"
+            />
+          }
         />
 
-        <div className="buffer-md" />
+        <div className="buffer-lg" />
 
         <Subcontainer
           subtitle="CPO"
           title="Anriel"
           content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
           moreButton={<SocialLinks insta="anr.kie" />}
-          image={<img src={anriel} className="portrait" key="anriel-image" />}
+          image={
+            <img
+              src={anriel}
+              className="portrait"
+              alt="anriel-portrait"
+              key="anriel-image"
+            />
+          }
           align="right"
         />
 
-        <div className="buffer-md" />
+        <div className="buffer-lg" />
 
         <Subcontainer
           subtitle="CPO"
           title="Joshua"
           content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
           moreButton={<SocialLinks insta="jooshuaaa__" />}
-          image={<img src={joshua} className="portrait" key="joshua-image" />}
+          image={
+            <img
+              src={joshua}
+              className="portrait"
+              alt="joshua-portrait"
+              key="joshua-image"
+            />
+          }
         />
       </div>
     );
