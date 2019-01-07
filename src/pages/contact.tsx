@@ -84,7 +84,7 @@ class Contact extends React.Component<{}, State> {
     return (
       <div className="text-center">
         <div className="buffer-sm" />
-        <div className="h1 slogan">Arbeit finden.</div>
+        <div className="h1 slogan">Kontakt.</div>
 
         <div className="buffer-lg" />
 

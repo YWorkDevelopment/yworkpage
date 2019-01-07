@@ -8,7 +8,7 @@ import "./styles/main.css";
 // Page Styles
 import "./styles/pages/about.css";
 import "./styles/pages/contact.css";
-import "./styles/pages/events.css";
+import "./styles/pages/blog.css";
 import "./styles/pages/home.css";
 import "./styles/pages/team.css";
 

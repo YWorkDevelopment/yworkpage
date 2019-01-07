@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/omc6jul.css");
 .navbar-shadow {
   height: 50px;
   padding-top: 0 !important;
@@ -8,24 +9,25 @@
     .navbar-shadow {
       height: 70px; } }
 
-.navbar-disable-shadow {
-  box-shadow: none; }
-
 .nav-item {
   text-transform: uppercase;
   transform: scale(0.75, 0.75);
-  margin-left: -1rem;
+  margin-left: -0.75rem;
   color: #999; }
   @media only screen and (max-width: 768px) {
     .nav-item {
       font-weight: bold; } }
+
+.navbar-sm-nav {
+  flex-direction: column !important; }
 
 .nav-link.active {
   color: #111111 !important; }
 
 .y {
   color: #ff393a;
-  font-family: serif; }
+  font-family: big-caslon-fb, serif;
+  font-weight: bold; }
 
 .menu-arrow {
   display: flex;

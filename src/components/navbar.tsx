@@ -19,7 +19,7 @@ class NavBarLg extends React.Component<{}, {}> {
               <NavLink to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/events">Events</NavLink>
+              <NavLink to="/blog">Blog</NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/team">Team</NavLink>
@@ -62,12 +62,7 @@ class NavBarSm extends React.Component<{}, NavBarSmState> {
     }
 
     return (
-      <nav
-        className={
-          "navbar navbar-expand-md navbar-light bg-light fixed-top navbar-shadow" +
-          (this.state.isOpen ? " navbar-disable-shadow" : "")
-        }
-      >
+      <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top navbar-shadow">
         <div className="flexer">
           <div className="navbar-brand bold">
             <img src={logo} width="32px" className="d-inline-block align-top" />
@@ -87,12 +82,12 @@ class NavBarSm extends React.Component<{}, NavBarSmState> {
         <div
           className={"menu-links" + (this.state.isOpen ? "" : " menu-closed")}
         >
-          <ul className="navbar-nav">
+          <ul className="navbar-nav navbar-sm-nav">
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
               <NavLink to="/">Home</NavLink>
             </li>
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
-              <NavLink to="/events">Events</NavLink>
+              <NavLink to="/blog">Blog</NavLink>
             </li>
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
               <NavLink to="/team">Team</NavLink>
@@ -101,7 +96,7 @@ class NavBarSm extends React.Component<{}, NavBarSmState> {
 
           <hr />
 
-          <ul className="navbar-nav">
+          <ul className="navbar-nav navbar-sm-nav">
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
               <NavLink to="/kontakt">Kontakt</NavLink>
             </li>

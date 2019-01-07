@@ -1,8 +1,13 @@
 .footer-container {
   background: #fafafa;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid #efefef;
-  height: fit-content; }
+  border-bottom: 1px solid #efefef; }
+  @media only screen and (max-width: 768px) {
+    .footer-container {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; } }
 
 .fade-text {
   font-size: 0.75rem;

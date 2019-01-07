@@ -6,7 +6,9 @@ class FindWorkButton extends React.Component<{}, {}> {
   public render() {
     return (
       <ButtonLink to="/kontakt">
-        <button className="button button-red">Arbeit finden</button>
+        <button className="button button-red">
+          Arbeit finden oder anbieten
+        </button>
       </ButtonLink>
     );
   }

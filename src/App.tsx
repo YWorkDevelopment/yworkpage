@@ -5,7 +5,7 @@ import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 
 import Home from "./pages/home";
-import Events from "./pages/events";
+import Blog from "./pages/blog";
 import Team from "./pages/team";
 import Contact from "./pages/contact";
 import About from "./pages/about";
@@ -29,8 +29,8 @@ class App extends React.Component<{}, {}> {
               {/* Home */}
               <Route path="/" component={Home} exact={true} />
 
-              {/* Events */}
-              <Route path="/events" component={Events} />
+              {/* Blog */}
+              <Route path="/blog" component={Blog} />
 
               {/* Team */}
               <Route path="/team" component={Team} />

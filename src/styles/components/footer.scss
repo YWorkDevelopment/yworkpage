@@ -2,9 +2,14 @@
 
 .footer-container {
   background: $gray;
-  padding: $distance-md;
+  padding-top: $distance-md;
+  padding-bottom: $distance-md;
+  @media only screen and (max-width: 768px) {
+    padding-top: $distance-sm;
+    padding-bottom: $distance-sm;
+  }
   border-top: 1px solid $dark-gray;
-  height: fit-content;
+  border-bottom: 1px solid $dark-gray;
 }
 
 .fade-text {

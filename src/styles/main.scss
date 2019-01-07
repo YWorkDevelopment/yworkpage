@@ -76,6 +76,12 @@ blockquote {
   }
 }
 
+.buffer-img {
+  @media only screen and (max-width: 768px) {
+    margin-top: $distance-md * 1.25;
+  }
+}
+
 .portrait {
   @media only screen and (max-width: 768px) {
     padding-top: 1rem;

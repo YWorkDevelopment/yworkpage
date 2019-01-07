@@ -5,7 +5,8 @@
   align-items: center;
 
   display: inline-flex;
-  width: 5 * $distance-lg;
+  min-width: 5 * $distance-lg;
+  width: fit-content;
   height: $distance-lg + $distance-sm;
   padding: 0 $distance-sm;
   font-size: 12px;
