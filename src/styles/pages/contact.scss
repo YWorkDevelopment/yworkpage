@@ -23,3 +23,76 @@
   box-shadow: none;
   border-color: $red;
 }
+
+.padding-input {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.col-no-padding {
+  padding: 0;
+  display: flex;
+}
+
+.option-left {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.option-right {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.option {
+  color: $red;
+  border-color: $red;
+  padding: 0.5rem;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid $red;
+  font-size: 0.75rem;
+  transition: background 0.25s, color 0.25s;
+}
+
+.option.selected {
+  color: white;
+  background: $red;
+}
+
+.option-left .option {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.option-right .option {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.age-input {
+  width: 100px;
+}
+
+.area-width {
+  text-align: left !important;
+  width: 25%;
+  @media only screen and (max-width: 1068px) {
+    width: 50%;
+  }
+  @media only screen and (max-width: 568px) {
+    width: 100%;
+  }
+}
+
+.form-control {
+  @media only screen and (max-width: 768px) {
+    display: initial;
+  }
+}
+
+.top-input {
+  @media only screen and (max-width: 768px) {
+    margin-bottom: $distance-sm;
+  }
+}

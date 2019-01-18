@@ -110,29 +110,6 @@ class NavBarSm extends React.Component<{}, NavBarSmState> {
     );
   }
 }
-/*
-<ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/events">Events</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to="/team">Team</NavLink>
-            </li>
-          </ul>
-
-          <ul className="navbar-nav float-right">
-            <li className="nav-item">
-              <NavLink to="/kontakt">Kontakt</NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink to="/impressum">Impressum</NavLink>
-            </li>
-          </ul>
-*/
 
 class NavBar extends React.Component<{}, {}> {
   public render() {

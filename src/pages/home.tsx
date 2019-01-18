@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { getImgStyle } from "../scripts/util";
+
 import { FindWorkButton, MoreButton } from "../components/buttons";
 import Subcontainer from "../components/subcontainer";
 import { SocialLinks } from "../components/social";
@@ -17,8 +19,8 @@ class Home extends React.Component<{}, {}> {
 
           <div className="buffer-sm" />
           <div className="quote">
-            — Eine Unternehmung, die Jugendliche mit wenig Arbeit reich
-            macht🛠💵💰 Zumindest fast...😎
+            Eine Unternehmung, die Jugendliche mit wenig Arbeit reich macht🛠💵💰
+            Zumindest fast...😎
           </div>
 
           <div className="buffer-md" />
@@ -39,8 +41,9 @@ class Home extends React.Component<{}, {}> {
           image={
             <img
               src={logo}
+              onLoad={getImgStyle}
               className="full-img"
-              alt="ywork-logo"
+              alt="y-work-logo"
               key="y-work-logo"
             />
           }
@@ -91,7 +94,9 @@ class Home extends React.Component<{}, {}> {
               Wo ist <span className="y">Y</span>-Work?
             </div>
           }
-          content="Wir haben Social Media Kanäle auf Instagram (@ywork2018) und Facebook (ywork.switzerland), wo wir dich ständig auf dem Laufenden halten. Schau doch mal vorbei!"
+          content="Auf unseren Social Media Kanälen auf Instagram und
+          Facebook und in unserem Y-Blog halten wir dich
+          ständig auf dem Laufenden. Schau doch mal vorbei!"
           moreButton={
             <SocialLinks insta="ywork2018" facebook="ywork.switzerland" />
           }

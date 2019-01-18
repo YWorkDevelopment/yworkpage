@@ -11,6 +11,10 @@ import Contact from "./pages/contact";
 import About from "./pages/about";
 import _404 from "./pages/404";
 
+if (location.hostname !== "www.ywork.ch" && location.hostname !== "localhost") {
+  location.hostname = "www.ywork.ch";
+}
+
 class App extends React.Component<{}, {}> {
   public componentWillMount() {
     window.onresize = () => this.forceUpdate();
