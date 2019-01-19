@@ -6,7 +6,8 @@ import Subcontainer from "../components/subcontainer";
 import { SocialLinks } from "../components/social";
 
 import logo from "../images/logo.png";
-import investorenanlass from "../images/investorenanlass.jpg";
+import investorenanlass from "../images/blog/investorenanlass.jpg";
+import yescoaching from "../images/blog/yescoaching.jpeg";
 
 class Blog extends React.Component<{}, {}> {
   public render() {
@@ -20,6 +21,26 @@ class Blog extends React.Component<{}, {}> {
         </div>
 
         <div className="buffer-lg" />
+
+        <Subcontainer
+          subtitle="19. Januar 2019"
+          title="Coaching Standdesign"
+          content="Wir danken für die hilfreichen Tipps. Unser Stand für die RTF hat sich
+          weiterentwickelt und wir freuen uns auf die Realisierung."
+          image={
+            <img
+              src={yescoaching}
+              onLoad={getImgStyle}
+              className="full-img buffer-img"
+              alt="yescoaching-img"
+              key="yescoaching-image-19012019"
+            />
+          }
+          align="right"
+        />
+
+        <div className="buffer-lg" />
+        <div className="buffer-md" />
 
         <Subcontainer
           subtitle="27. Oktober 2018"
