@@ -98,7 +98,7 @@ class Home extends React.Component<{}, {}> {
           Facebook und in unserem Y-Blog halten wir dich
           ständig auf dem Laufenden. Schau doch mal vorbei!"
           moreButton={
-            <SocialLinks insta="ywork2018" facebook="ywork.switzerland" />
+            <SocialLinks insta="ywork2019" facebook="ywork.switzerland" />
           }
           align="right"
         />

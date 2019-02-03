@@ -37,6 +37,7 @@ class Blog extends React.Component<{}, {}> {
             />
           }
           align="right"
+          moreButton={<SocialLinks insta="p/BtOVJfLFTgf/" />}
         />
 
         <div className="buffer-lg" />

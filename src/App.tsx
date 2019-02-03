@@ -16,6 +16,12 @@ if (location.hostname !== "www.ywork.ch" && location.hostname !== "localhost") {
 }
 
 class App extends React.Component<{}, {}> {
+  public componentDidUpdate() {
+    const focusedInput = document.querySelector(window["focusedInput"]);
+    if (focusedInput !== null) focusedInput.focus();
+    window["focusedInput"] = "#null";
+  }
+
   public componentWillMount() {
     window.onresize = () => this.forceUpdate();
   }

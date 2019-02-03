@@ -21,6 +21,7 @@ class Contact extends React.Component<{}, State> {
     const reCAPTCHA: HTMLScriptElement = document.createElement("script");
     reCAPTCHA.src = "https://www.google.com/recaptcha/api.js";
     document.head.append(reCAPTCHA);
+    window["focusedInput"] = "#null";
   }
 
   public submit(e: React.MouseEvent<HTMLButtonElement>) {
@@ -44,6 +45,7 @@ class Contact extends React.Component<{}, State> {
     for (const value in form) {
       const formValue = document.querySelector(`#${value}`);
       form[value] = formValue ? formValue["value"] : "";
+      formValue ? (formValue["value"] = "") : null;
     }
 
     form["isGiver"] = this.state.isGiver;
@@ -127,9 +129,12 @@ class Contact extends React.Component<{}, State> {
           "contact-input form-control" +
           (props.className ? " " + props.className : "")
         }
+        onFocus={() => (window["focusedInput"] = "#" + props.name)}
+        onBlur={() => (window["focusedInput"] = "#null")}
         placeholder={props.placeholder}
         spellCheck={false}
         required={true}
+        key={props.name}
       />
     );
 
