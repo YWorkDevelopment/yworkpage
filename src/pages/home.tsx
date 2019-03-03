@@ -2,11 +2,13 @@ import * as React from "react";
 
 import { getImgStyle } from "../scripts/util";
 import Locales from "../scripts/locales";
+import Constants from "../scripts/constants";
 
 import { FindWorkButton, MoreButton } from "../components/buttons";
 import Subcontainer from "../components/subcontainer";
 import { SocialLinks } from "../components/social";
 
+//import team from "../images/team.png";
 import logo from "../images/logo.png";
 
 class Home extends React.Component<{}, {}> {
@@ -70,7 +72,15 @@ class Home extends React.Component<{}, {}> {
           }
           content={Locale.teamtext}
           moreButton={<MoreButton to="/team" />}
-          align="left"
+          /*image={
+            <img
+              src={team}
+              onLoad={getImgStyle}
+              className="full-img"
+              alt="team-image"
+              key="team-image-home"
+            />
+          }*/
         />
 
         <div className="buffer-md" />
@@ -84,7 +94,10 @@ class Home extends React.Component<{}, {}> {
           }
           content={Locale.socialtext}
           moreButton={
-            <SocialLinks insta="ywork2019" facebook="ywork.switzerland" />
+            <SocialLinks
+              insta={Constants.insta}
+              facebook={Constants.facebook}
+            />
           }
           align="right"
         />

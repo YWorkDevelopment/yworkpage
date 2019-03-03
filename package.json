@@ -19,7 +19,7 @@
     "build": "yarn build-css && react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "deploy": "yarn build && cd build/ && npx now"
+    "deploy": "yarn build && cd build/ && now"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",

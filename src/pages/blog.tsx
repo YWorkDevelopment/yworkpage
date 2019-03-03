@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { getImgStyle } from "../scripts/util";
 import Locales from "../scripts/locales";
+import Constants from "../scripts/constants";
 
 import Subcontainer from "../components/subcontainer";
 import { SocialLinks } from "../components/social";
@@ -9,6 +10,7 @@ import { SocialLinks } from "../components/social";
 import logo from "../images/logo.png";
 import investorenanlass from "../images/blog/investorenanlass.jpg";
 import yescoaching from "../images/blog/yescoaching.jpeg";
+import rtf from "../images/blog/rtf.jpg";
 
 class Blog extends React.Component<{}, {}> {
   public render() {
@@ -24,6 +26,25 @@ class Blog extends React.Component<{}, {}> {
         </div>
 
         <div className="buffer-lg" />
+
+        <Subcontainer
+          subtitle={Locale[3].date}
+          title={Locale[3].title}
+          content={Locale[3].text}
+          image={
+            <img
+              src={rtf}
+              onLoad={getImgStyle}
+              className="full-img buffer-img"
+              alt="rtf-img"
+              key="rtf-image-01032019"
+            />
+          }
+          moreButton={<SocialLinks insta="p/Bud5VRCnRTq/" />}
+        />
+
+        <div className="buffer-lg" />
+        <div className="buffer-md" />
 
         <Subcontainer
           subtitle={Locale[2].date}
@@ -82,7 +103,10 @@ class Blog extends React.Component<{}, {}> {
             />
           }
           moreButton={
-            <SocialLinks insta="ywork2018" facebook="ywork.switzerland" />
+            <SocialLinks
+              insta={Constants.insta}
+              facebook={Constants.facebook}
+            />
           }
           align="right"
         />

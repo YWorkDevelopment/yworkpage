@@ -60,6 +60,11 @@ export default {
         title: "Coaching Standdesign",
         text: `Wir danken für die hilfreichen Tipps. Unser Stand für die RTF hat sich
         weiterentwickelt und wir freuen uns auf die Realisierung.`
+      },
+      {
+        date: "1. März 2019",
+        title: "RTF - Regionale Handelsmesse",
+        text: `Vielen Dank an YES für die tolle Erfahrung und das gute Feedback. Wir würden uns freuen unseren Stand nochmals an der RTF aufzubauen zu dürfen.`
       }
     ],
     team: {
@@ -222,6 +227,11 @@ export default {
         title: "Entraînement de conception de cabines",
         text: `Merci pour les conseils utiles. Notre position pour la RTF est devenue
         développé plus loin et nous attendons avec impatience la réalisation.`
+      },
+      {
+        date: "1 mars 2019",
+        title: "RTF - Salon professionnel régional",
+        text: `Merci à YES pour sa grande expérience et ses retours. Nous serions heureux de reconstruire notre cabine à la RTF.`
       }
     ],
     team: {

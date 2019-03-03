@@ -14,6 +14,8 @@
 }
 
 .large-title {
+  line-height: 2.75rem;
+  margin-bottom: $distance-sm;
   font-size: 1.25 * $distance-lg;
   @media only screen and (max-width: 768px) {
     font-size: 0.75 * $distance-lg;
