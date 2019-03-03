@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { getImgStyle } from "../scripts/util";
+import Locales from "../scripts/locales";
 
 import Subcontainer from "../components/subcontainer";
 import { SocialLinks } from "../components/social";
@@ -11,6 +12,8 @@ import yescoaching from "../images/blog/yescoaching.jpeg";
 
 class Blog extends React.Component<{}, {}> {
   public render() {
+    const Locale = Locales[window["APPLANG"]].blog;
+
     return (
       <div>
         <div className="text-center">
@@ -23,10 +26,9 @@ class Blog extends React.Component<{}, {}> {
         <div className="buffer-lg" />
 
         <Subcontainer
-          subtitle="19. Januar 2019"
-          title="Coaching Standdesign"
-          content="Wir danken für die hilfreichen Tipps. Unser Stand für die RTF hat sich
-          weiterentwickelt und wir freuen uns auf die Realisierung."
+          subtitle={Locale[2].date}
+          title={Locale[2].title}
+          content={Locale[2].text}
           image={
             <img
               src={yescoaching}
@@ -44,11 +46,9 @@ class Blog extends React.Component<{}, {}> {
         <div className="buffer-md" />
 
         <Subcontainer
-          subtitle="27. Oktober 2018"
-          title="Investorenanlass"
-          content="Der Investorenanlass war ein voller Erfolg! Danke an alle, die in uns
-          investiert haben! Wir können nun endlich mit der Entwicklung unseres
-          Produkts anfangen."
+          subtitle={Locale[1].date}
+          title={Locale[1].title}
+          content={Locale[1].text}
           image={
             <img
               src={investorenanlass}
@@ -65,15 +65,13 @@ class Blog extends React.Component<{}, {}> {
         <div className="buffer-md" />
 
         <Subcontainer
-          subtitle="Der Y-Blog"
+          subtitle={Locale[0].date}
           title={
             <div>
-              Was ist der <span className="y">Y</span>-Blog?
+              {Locale[0].title} <span className="y">Y</span>-Blog?
             </div>
           }
-          content="Im Y-Blog erfährst du als Erstes die neuesten Sachen und spannende
-          Neuheiten bei Y-Work. Wenn du bei einer Neuigkeit benachrichtigt
-          werden willst, dann folge uns auf Instagram und Facebook!"
+          content={Locale[0].text}
           image={
             <img
               src={logo}

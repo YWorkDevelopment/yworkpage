@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
+import Locales from "./scripts/locales";
+
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 
@@ -11,7 +13,11 @@ import Contact from "./pages/contact";
 import About from "./pages/about";
 import _404 from "./pages/404";
 
-if (location.hostname !== "www.ywork.ch" && location.hostname !== "localhost") {
+if (
+  location.hostname !== "www.ywork.ch" &&
+  location.hostname !== "localhost" &&
+  location.hostname !== "192.168.1.127"
+) {
   location.hostname = "www.ywork.ch";
 }
 
@@ -24,9 +30,15 @@ class App extends React.Component<{}, {}> {
 
   public componentWillMount() {
     window.onresize = () => this.forceUpdate();
+    window["APPCOMPONENT"] = this;
+    window["APPLANG"] =
+      localStorage.APPLANG || (navigator.language.includes("FR") ? "FR" : "DE");
+    window["SETAPPLANG"] = (lang: "DE" | "FR") => (window["APPLANG"] = lang);
   }
 
   public render() {
+    const Locale = Locales[window["APPLANG"]];
+    document.title = "Y-Work – " + Locale.shortslogan;
     return (
       <Router>
         <div>

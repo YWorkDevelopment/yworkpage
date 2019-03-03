@@ -95,3 +95,19 @@
 .menu-closed {
   height: 0;
 }
+
+.nopointer {
+  cursor: default;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.lang-option {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.lang-option.lang {
+  color: #111111;
+}

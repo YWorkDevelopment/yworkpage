@@ -2,13 +2,14 @@ import * as React from "react";
 
 import { ButtonLink } from "./links";
 
+import Locales from "../scripts/locales";
+
 class FindWorkButton extends React.Component<{}, {}> {
   public render() {
+    const Locale = Locales[window["APPLANG"]];
     return (
       <ButtonLink to="/kontakt">
-        <button className="button button-red">
-          Arbeit finden oder anbieten
-        </button>
+        <button className="button button-red">{Locale.findwork}</button>
       </ButtonLink>
     );
   }
@@ -20,7 +21,8 @@ interface MoreButtonProps {
 
 class MoreButton extends React.Component<MoreButtonProps, {}> {
   public render() {
-    return <LinkButton to={this.props.to}>Mehr</LinkButton>;
+    const Locale = Locales[window["APPLANG"]];
+    return <LinkButton to={this.props.to}>{Locale.more}</LinkButton>;
   }
 }
 

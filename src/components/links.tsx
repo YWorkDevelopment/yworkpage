@@ -2,16 +2,19 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 interface NavLinkProps {
-  to: string;
+  to?: string;
+  selector?: boolean;
 }
 
 class NavLink extends React.Component<NavLinkProps, {}> {
   public render() {
     return (
       <Link
-        to={this.props.to}
+        to={this.props.to || location.pathname}
         className={
-          "nav-link" + (location.pathname === this.props.to ? " active" : "")
+          "nav-link" +
+          (location.pathname === this.props.to ? " active" : "") +
+          (this.props.selector ? " nopointer" : "")
         }
         onClick={() => window.scrollTo(0, 0)}
       >

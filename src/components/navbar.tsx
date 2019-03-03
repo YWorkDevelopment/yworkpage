@@ -3,10 +3,14 @@ import disableScroll from "disable-scroll";
 
 import { NavLink } from "./links";
 
+import Locales from "../scripts/locales";
+
 import logo from "../images/logo.png";
 
 class NavBarLg extends React.Component<{}, {}> {
   public render() {
+    const Locale = Locales[window["APPLANG"]].navbar;
+
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top navbar-shadow">
         <div className="flexer">
@@ -16,28 +20,61 @@ class NavBarLg extends React.Component<{}, {}> {
 
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">{Locale.home}</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/blog">Blog</NavLink>
+              <NavLink to="/blog">{Locale.blog}</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/team">Team</NavLink>
+              <NavLink to="/team">{Locale.team}</NavLink>
             </li>
           </ul>
 
           <ul className="navbar-nav float-right">
             <li className="nav-item">
-              <NavLink to="/kontakt">Kontakt</NavLink>
+              <NavLink to="/kontakt">{Locale.contact}</NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink to="/impressum">Impressum</NavLink>
+              <NavLink to="/impressum">{Locale.about}</NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink selector={true}>
+                <span
+                  className={
+                    "pointer lang-option" +
+                    (window["APPLANG"] == "DE" ? " lang" : "")
+                  }
+                  onClick={() => setLang("DE")}
+                >
+                  DE
+                </span>{" "}
+                I{" "}
+                <span
+                  className={
+                    "pointer lang-option" +
+                    (window["APPLANG"] == "FR" ? " lang" : "")
+                  }
+                  onClick={() => setLang("FR")}
+                >
+                  FR
+                </span>
+              </NavLink>
             </li>
           </ul>
         </div>
       </nav>
     );
+  }
+}
+
+function setLang(lang: "DE" | "FR") {
+  localStorage.APPLANG = lang;
+  window["SETAPPLANG"](lang);
+  window["APPCOMPONENT"].forceUpdate();
+  if (location.pathname === "/kontakt") {
+    location.reload();
   }
 }
 
@@ -60,6 +97,8 @@ class NavBarSm extends React.Component<{}, NavBarSmState> {
     } else {
       disableScroll.off();
     }
+
+    const Locale = Locales[window["APPLANG"]].navbar;
 
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top navbar-shadow">
@@ -84,13 +123,13 @@ class NavBarSm extends React.Component<{}, NavBarSmState> {
         >
           <ul className="navbar-nav navbar-sm-nav">
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">{Locale.home}</NavLink>
             </li>
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
-              <NavLink to="/blog">Blog</NavLink>
+              <NavLink to="/blog">{Locale.blog}</NavLink>
             </li>
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
-              <NavLink to="/team">Team</NavLink>
+              <NavLink to="/team">{Locale.team}</NavLink>
             </li>
           </ul>
 
@@ -98,11 +137,35 @@ class NavBarSm extends React.Component<{}, NavBarSmState> {
 
           <ul className="navbar-nav navbar-sm-nav">
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
-              <NavLink to="/kontakt">Kontakt</NavLink>
+              <NavLink to="/kontakt">{Locale.contact}</NavLink>
             </li>
 
             <li className="nav-item" onClick={this.closeMenu.bind(this)}>
-              <NavLink to="/impressum">Impressum</NavLink>
+              <NavLink to="/impressum">{Locale.about}</NavLink>
+            </li>
+
+            <li className="nav-item" onClick={this.closeMenu.bind(this)}>
+              <NavLink selector={true}>
+                <span
+                  className={
+                    "pointer lang-option" +
+                    (window["APPLANG"] == "DE" ? " lang" : "")
+                  }
+                  onClick={() => setLang("DE")}
+                >
+                  DE
+                </span>{" "}
+                I{" "}
+                <span
+                  className={
+                    "pointer lang-option" +
+                    (window["APPLANG"] == "FR" ? " lang" : "")
+                  }
+                  onClick={() => setLang("FR")}
+                >
+                  FR
+                </span>
+              </NavLink>
             </li>
           </ul>
         </div>

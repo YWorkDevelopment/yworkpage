@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import Locales from "../scripts/locales";
+
 interface State {
   isGiver: boolean;
   invalid: boolean;
@@ -19,12 +21,16 @@ class Contact extends React.Component<{}, State> {
 
   public componentDidMount() {
     const reCAPTCHA: HTMLScriptElement = document.createElement("script");
-    reCAPTCHA.src = "https://www.google.com/recaptcha/api.js";
+    reCAPTCHA.src = `https://www.google.com/recaptcha/api.js?hl=${
+      window["APPLANG"]
+    }`;
     document.head.append(reCAPTCHA);
     window["focusedInput"] = "#null";
   }
 
   public submit(e: React.MouseEvent<HTMLButtonElement>) {
+    const Locale = Locales[window["APPLANG"]].contact.errors;
+
     e.preventDefault();
     if (!this.validate()) return;
 
@@ -53,7 +59,7 @@ class Contact extends React.Component<{}, State> {
     if (captcha === undefined || captcha === "" || captcha === null) {
       this.setState({
         invalid: true,
-        message: "Bestätigen Sie, dass Sie kein Roboter sind."
+        message: Locale.norobot
       });
       return;
     }
@@ -71,7 +77,7 @@ class Contact extends React.Component<{}, State> {
         if (data.success == false) {
           this.setState({
             invalid: true,
-            message: "Versuchen Sie es später nochmals."
+            message: Locale.trylater
           });
         } else {
           location.pathname = "/";
@@ -80,12 +86,14 @@ class Contact extends React.Component<{}, State> {
       .catch(ex => {
         this.setState({
           invalid: true,
-          message: "Versuchen Sie es später nochmals."
+          message: Locale.trylater
         });
       });
   }
 
   public validate() {
+    const Locale = Locales[window["APPLANG"]].contact.errors;
+
     const inputs: any = document.getElementsByTagName("input");
     const areas: any = document.getElementsByTagName("textarea");
 
@@ -109,13 +117,16 @@ class Contact extends React.Component<{}, State> {
 
     this.setState({
       invalid: !valid,
-      message: valid ? this.state.message : "Füllen Sie alle Felder aus."
+      message: valid ? this.state.message : Locale.emptyfields
     });
 
     return valid;
   }
 
   public render() {
+    const Locale = Locales[window["APPLANG"]].contact;
+    const FormLocale = Locales[window["APPLANG"]].contact.form;
+
     const Input = (props: {
       type: string;
       placeholder: string;
@@ -142,11 +153,15 @@ class Contact extends React.Component<{}, State> {
       <form className="input-container">
         <div className="row">
           <div className="col padding-input top-input">
-            <Input type="text" placeholder="Vorname" name="name" />
+            <Input type="text" placeholder={FormLocale.name} name="name" />
           </div>
 
           <div className="col padding-input">
-            <Input type="text" placeholder="Nachname" name="surname" />
+            <Input
+              type="text"
+              placeholder={FormLocale.surname}
+              name="surname"
+            />
           </div>
         </div>
       </form>
@@ -154,7 +169,7 @@ class Contact extends React.Component<{}, State> {
     return (
       <div className="text-center">
         <div className="buffer-sm" />
-        <div className="h1 slogan">Kontakt.</div>
+        <div className="h1 slogan">{Locale.title}.</div>
 
         <div className="buffer-md" />
 
@@ -164,7 +179,7 @@ class Contact extends React.Component<{}, State> {
               className={"option" + (this.state.isGiver ? "" : " selected")}
               onClick={() => this.setState({ isGiver: false })}
             >
-              Arbeitnehmer
+              {Locale.receiver}
             </div>
           </div>
 
@@ -173,7 +188,7 @@ class Contact extends React.Component<{}, State> {
               className={"option" + (this.state.isGiver ? " selected" : "")}
               onClick={() => this.setState({ isGiver: true })}
             >
-              Arbeitgeber
+              {Locale.giver}
             </div>
           </div>
         </div>
@@ -189,7 +204,7 @@ class Contact extends React.Component<{}, State> {
             <div className="input-container">
               <Input
                 type="text"
-                placeholder="Strasse, Ort, PLZ"
+                placeholder={FormLocale.address}
                 name="address"
               />
             </div>
@@ -197,11 +212,7 @@ class Contact extends React.Component<{}, State> {
             <div className="buffer-sm" />
 
             <div className="input-container">
-              <Input
-                type="text"
-                placeholder="Zeit: z.B. 07:00 - 13:00"
-                name="time"
-              />
+              <Input type="text" placeholder={FormLocale.time} name="time" />
             </div>
 
             <div className="buffer-sm" />
@@ -209,7 +220,7 @@ class Contact extends React.Component<{}, State> {
             <div className="input-container">
               <Input
                 type="text"
-                placeholder="Frist: z.B. 13. August 2019"
+                placeholder={FormLocale.deadline}
                 name="deadline"
               />
             </div>
@@ -221,7 +232,7 @@ class Contact extends React.Component<{}, State> {
                 id="work"
                 className="form-control area-width contact-input"
                 rows={3}
-                placeholder="Beschrieb der angebotenen Arbeit."
+                placeholder={FormLocale.description}
                 required={true}
               />
             </div>
@@ -233,7 +244,7 @@ class Contact extends React.Component<{}, State> {
             <div className="input-container">
               <Input
                 type="text"
-                placeholder="Alter"
+                placeholder={FormLocale.age}
                 name="age"
                 className="age-input"
               />
@@ -242,11 +253,7 @@ class Contact extends React.Component<{}, State> {
             <div className="buffer-sm" />
 
             <div className="input-container">
-              <Input
-                type="text"
-                placeholder="Zeit: z.B. 07:00 - 13:00"
-                name="time"
-              />
+              <Input type="text" placeholder={FormLocale.time} name="time" />
             </div>
 
             <div className="buffer-sm" />
@@ -256,7 +263,7 @@ class Contact extends React.Component<{}, State> {
                 id="works"
                 className="form-control area-width contact-input"
                 rows={2}
-                placeholder="Mögliche Arbeiten."
+                placeholder={FormLocale.works}
                 required={true}
                 key="works"
               />
@@ -269,7 +276,7 @@ class Contact extends React.Component<{}, State> {
                 id="places"
                 className="form-control area-width contact-input"
                 rows={2}
-                placeholder="Mögliche Orte."
+                placeholder={FormLocale.places}
                 required={true}
                 key="places"
               />
@@ -280,7 +287,7 @@ class Contact extends React.Component<{}, State> {
         <div className="buffer-sm" />
 
         <div className="input-container">
-          <Input type="email" placeholder="Email Adresse" name="mail" />
+          <Input type="email" placeholder={FormLocale.mail} name="mail" />
         </div>
 
         <div className="buffer-md" />

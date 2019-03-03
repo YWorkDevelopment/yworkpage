@@ -1,4 +1,4 @@
-# YWork Page
+# Y-Work Frontend
 
-Official Homepage of YWork.
-Visit us [here](https://ywork.now.sh).
+Official Homepage of Y-Work.
+Visit us [here](https://www.ywork.ch).
