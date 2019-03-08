@@ -2,6 +2,8 @@ import * as React from "react";
 
 import Locales from "../scripts/locales";
 
+import yourwaytowork from "../images/yourwaytowork.svg";
+
 interface State {
   isGiver: boolean;
   invalid: boolean;
@@ -192,6 +194,13 @@ class Contact extends React.Component<{}, State> {
             </div>
           </div>
         </div>
+
+        <img
+          src={yourwaytowork}
+          className="full-img svg bgbubble ywtw"
+          alt="yourwaytowork"
+          key="yourwaytowork"
+        />
 
         <div className="buffer-md" />
 

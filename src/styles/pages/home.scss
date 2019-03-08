@@ -2,9 +2,9 @@
 
 .slogan {
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 5rem;
   @media only screen and (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -17,4 +17,20 @@
 
 .quote {
   color: $darker-gray;
+}
+
+.bgbubble {
+  position: absolute;
+  z-index: -10;
+  top: 100px;
+  left: 60px;
+  width: 17.5vw;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.bgbubble.ywtw {
+  top: 120px;
+  left: 40px;
 }

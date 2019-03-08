@@ -8,8 +8,12 @@ import { FindWorkButton, MoreButton } from "../components/buttons";
 import Subcontainer from "../components/subcontainer";
 import { SocialLinks } from "../components/social";
 
-//import team from "../images/team.png";
 import logo from "../images/logo.png";
+
+import schaffaeundprofitierae from "../images/schaffaeundprofitierae.svg";
+import whyworkwhynot from "../images/whyworkwhynot.svg";
+import yourwaytowork from "../images/yourwaytowork.svg";
+import followus from "../images/followus.svg";
 
 class Home extends React.Component<{}, {}> {
   public render() {
@@ -20,7 +24,7 @@ class Home extends React.Component<{}, {}> {
       <div>
         <div className="text-center">
           <div className="buffer-sm" />
-          <div className="h1 slogan">Youth-Work.</div>
+          <div className="h1 slogan">Y-Work.</div>
           <div className="h4 subslogan">{XLocale.shortslogan}</div>
 
           <div className="buffer-sm" />
@@ -29,6 +33,13 @@ class Home extends React.Component<{}, {}> {
           <div className="buffer-md" />
           <FindWorkButton />
         </div>
+
+        <img
+          src={schaffaeundprofitierae}
+          className="full-img svg bgbubble"
+          alt="schaffaeundprofitierae"
+          key="schaffaeundprofitierae"
+        />
 
         <div className="buffer-lg" />
         <div className="buffer-lg" />
@@ -39,11 +50,11 @@ class Home extends React.Component<{}, {}> {
           content={Locale.nametext}
           image={
             <img
-              src={logo}
+              src={whyworkwhynot}
               onLoad={getImgStyle}
-              className="full-img"
-              alt="y-work-logo"
-              key="y-work-logo"
+              className="full-img svg"
+              alt="whyworkwhynot"
+              key="whyworkwhynot"
             />
           }
         />
@@ -59,6 +70,15 @@ class Home extends React.Component<{}, {}> {
           }
           content={Locale.ideatext}
           align="right"
+          image={
+            <img
+              src={yourwaytowork}
+              onLoad={getImgStyle}
+              className="full-img svg"
+              alt="yourwaytowork"
+              key="yourwaytowork"
+            />
+          }
         />
 
         <div className="buffer-md" />
@@ -72,15 +92,15 @@ class Home extends React.Component<{}, {}> {
           }
           content={Locale.teamtext}
           moreButton={<MoreButton to="/team" />}
-          /*image={
+          image={
             <img
-              src={team}
+              src={logo}
               onLoad={getImgStyle}
-              className="full-img"
-              alt="team-image"
-              key="team-image-home"
+              className="full-img top-dist"
+              alt="y-work-logo"
+              key="y-work-logo"
             />
-          }*/
+          }
         />
 
         <div className="buffer-md" />
@@ -100,6 +120,15 @@ class Home extends React.Component<{}, {}> {
             />
           }
           align="right"
+          image={
+            <img
+              src={followus}
+              onLoad={getImgStyle}
+              className="full-img svg"
+              alt="followus"
+              key="followus"
+            />
+          }
         />
       </div>
     );

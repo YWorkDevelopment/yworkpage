@@ -76,6 +76,22 @@ blockquote {
   }
 }
 
+.full-img.svg {
+  max-width: 50vw;
+  transform: scale(2);
+  margin-top: -3rem;
+}
+
+.full-img.top-dist {
+  @media only screen and (max-width: 768px) {
+    margin-top: 3rem;
+  }
+}
+
+.low-index {
+  z-index: -1;
+}
+
 .buffer-img {
   @media only screen and (max-width: 768px) {
     margin-top: $distance-md * 1.25;

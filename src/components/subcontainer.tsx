@@ -16,7 +16,7 @@ class Subcontainer extends React.Component<Props, {}> {
     const isSize = window.innerWidth < 768;
 
     const imageCol = (
-      <div className="col-md-4 text-center">{this.props.image}</div>
+      <div className="col-md-4 text-center low-index">{this.props.image}</div>
     );
 
     const content = (
