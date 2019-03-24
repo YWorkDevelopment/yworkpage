@@ -24,7 +24,9 @@ class Home extends React.Component<{}, {}> {
       <div>
         <div className="text-center">
           <div className="buffer-sm" />
-          <div className="h1 slogan">Y-Work.</div>
+          <div className="h1 slogan">
+            <span className="y">Y</span>-Work.
+          </div>
           <div className="h4 subslogan">{XLocale.shortslogan}</div>
 
           <div className="buffer-sm" />

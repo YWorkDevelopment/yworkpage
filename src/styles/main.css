@@ -59,7 +59,7 @@ blockquote {
       width: 75%; } }
 
 .full-img.svg {
-  max-width: 50vw;
+  max-width: 49vw;
   transform: scale(2);
   margin-top: -3rem; }
 
